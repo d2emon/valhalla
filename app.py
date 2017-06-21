@@ -3,7 +3,7 @@ from flask_script import Manager
 # from flask_bootstrap import Bootstrap
 # from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask_migrate import Migrate, MigrateCommand
 
 
 from config import app_config
@@ -85,9 +85,11 @@ def create_app(config_name='production'):
 # from case.views import *
 
 
-config_name = os.getenv('FLASK_CONFIG')
+config_name = os.getenv('FLASK_CONFIG', 'production')
 app = create_app(config_name)
 manager = Manager(app)
+manager.add_command('db', MigrateCommand)
+
 
 if __name__ == '__main__':
     app.run()
