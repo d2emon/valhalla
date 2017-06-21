@@ -6,9 +6,9 @@
   "scripts": {
     "preinstall": "git pull",
     "install": "pip install -r requirements.txt && bower install",
-    "prestart": "manage.py db upgrade && gulp",
-    "start": "manage.py runserver",
-    "test": "manage.py test"
+    "prestart": "python manage.py db upgrade && gulp",
+    "start": "python manage.py runserver",
+    "test": "python manage.py test"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,11 @@
   },
   "homepage": "https://github.com/d2emon/valhalla#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-pug": "^3.3.0"
   }
 }
