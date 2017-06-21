@@ -102,3 +102,5 @@ ENV/
 
 node_modules/
 bower_components/
+/static/
+/templates/
