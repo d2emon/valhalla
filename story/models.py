@@ -12,3 +12,7 @@ class Hero(db.Model):
 
     def __repr__(self):
         return '<Hero: {}>'.format(self.name)
+
+    @property
+    def image_url(self):
+        return "images/heroes/%d.jpg" % (self.id)

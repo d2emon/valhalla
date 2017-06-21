@@ -10,10 +10,16 @@ block body
               div(class="col-lg-8")
                 | {{intro|safe}}
               div(class="col-lg-4")
-                a(href="#")
-                  div(class="char well")
-                    | Фаргал
-                div(class="char well")
-                  | Конан
-                div(class="char well")
-                  | Хаген
+                | {% for hero in heroes %}
+                div(class="char thumbnail")
+                  .row
+                    h3 {{ hero.name }}
+                  .row
+                    div(class="hero-thumb col-sm-6")
+                      .inner
+                        img(src="{{ url_for('static', filename=hero.image_url) }}", alt="{{ hero.name }}")
+                    div(class="caption col-sm-6")
+                      p {{ hero.description }}
+                  .play-button 
+                    a(href="#", class="btn btn-primary") Играть
+                | {% endfor %}

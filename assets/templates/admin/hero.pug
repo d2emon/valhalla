@@ -1,0 +1,13 @@
+extends ../_base.pug
+
+block body
+  | {% import "bootstrap/wtf.html" as wtf %}
+  .content-section
+    .center
+      | {% if hero.id %}
+      h1 Изменение Истории
+      | {% else %}
+      h1 Новая История
+      | {% endif %}
+      br
+      | {{ wtf.quick_form(form) }}

@@ -26,9 +26,7 @@ html
                 a(href="{{ url_for('home.start') }}") Новая Игра
               | {% if current_user.is_admin %}
               li
-                a(href="{# { url_for('home.admin_dashboard') } #}") Dashboard
-              li
-                a(href="{# { url_for('admin.list_departments') } #}") Departments
+                a(href="{{ url_for('admin.list_heroes') }}") Истории
               li
                  a(href="{# { url_for('admin.list_roles') } #}") Roles
               li
