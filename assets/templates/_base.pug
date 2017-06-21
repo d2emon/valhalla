@@ -16,7 +16,7 @@ html
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a(class="navbar-brand topnav", href="url_for('home.homepage')") Вальгалла
+            a(class="navbar-brand topnav", href="{{ url_for('home.index') }}") Вальгалла
           div(class="collapse navbar-collapse", id="bs-example-navbar-collapse-1")
             ul(class="nav navbar-nav navbar-right")
               | {#
@@ -40,7 +40,7 @@ html
                 a <i class="fa fa-user"></i> Hi, {{ current_user.username }}!
               | {% else %}
               li
-                a(href="{{ url_for('home.homepage') }}") Home
+                a(href="{{ url_for('home.index') }}") Главная
               li
                 a(href="{{ url_for('auth.register') }}") Register
               li
@@ -48,7 +48,7 @@ html
               | {% endif %}
               | #}
               li
-                a(href="url_for('home.homepage')") Home
+                a(href="{{ url_for('home.index') }}") Главная
               li
                 a(href="url_for('auth.register')") Register
               li
@@ -65,9 +65,9 @@ html
           .col-lg-12
             ul.list-inline
               li
-                a(href="url_for('home.homepage')") Home
-              li.footer-menu-divider .
+                a(href="{{ url_for('home.index') }}") Главная
               | {#
+              li.footer-menu-divider .
               | {% if current_user.is_authenticated %}
               li
                 a(href="{{ url_for('auth.logout') }}") Logout
