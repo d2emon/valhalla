@@ -1,0 +1,27 @@
+{
+  "name": "valhalla",
+  "description": "Simple quest game",
+  "main": "manage.py",
+  "authors": [
+    "Dmitry Kutsenko <d2emonium@gmail.com>"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "game",
+    "valhalla"
+  ],
+  "homepage": "https://github.com/d2emon/valhalla",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.7.0"
+  }
+}

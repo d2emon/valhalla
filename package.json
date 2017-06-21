@@ -1,0 +1,30 @@
+{
+  "name": "valhalla",
+  "version": "0.1.0",
+  "description": "Simple quest game",
+  "main": "manage.py",
+  "scripts": {
+    "preinstall": "git pull",
+    "install": "pip install -r requirements.txt && bower install",
+    "prestart": "manage.py db upgrade && gulp",
+    "start": "manage.py runserver",
+    "test": "manage.py test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d2emon/valhalla.git"
+  },
+  "keywords": [
+    "game",
+    "valhalla"
+  ],
+  "author": "Dmitry Kutsenko <d2emonium@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/d2emon/valhalla/issues"
+  },
+  "homepage": "https://github.com/d2emon/valhalla#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
