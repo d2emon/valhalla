@@ -54,8 +54,7 @@ def create_app(config_name='production'):
     # login_manager.login_view = "auth.login"
     migrate = Migrate(app, db)
 
-    # from execom import models
-    # from app import models
+    from story import models
 
     # Installing blueprints
     from blueprints.admin import admin as admin_blueprint
