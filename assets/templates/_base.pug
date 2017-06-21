@@ -19,42 +19,31 @@ html
             a(class="navbar-brand topnav", href="{{ url_for('home.index') }}") Вальгалла
           div(class="collapse navbar-collapse", id="bs-example-navbar-collapse-1")
             ul(class="nav navbar-nav navbar-right")
-              | {#
+              li
+                a(href="{{ url_for('home.index') }}") Главная
               | {% if current_user.is_authenticated %}
-              | {% if current_user.is_admin %}
-              li
-                a(href="{{ url_for('home.admin_dashboard') }}") Dashboard
-              li
-                a(href="{{ url_for('admin.list_departments') }}") Departments
-              li
-                 a(href="{{ url_for('admin.list_roles') }}") Roles
-              li
-                a(href="{{ url_for('admin.list_employees') }}") Employees
-              | {% else %}
-              li
-                 a(href="{{ url_for('home.dashboard') }}") Dashboard
-              | {% endif %}
-              li
-                a(href="{{ url_for('auth.logout') }}") Logout
-              li
-                a <i class="fa fa-user"></i> Hi, {{ current_user.username }}!
-              | {% else %}
-              li
-                a(href="{{ url_for('home.index') }}") Главная
-              li
-                a(href="{{ url_for('auth.register') }}") Register
-              li
-                a(href="{{ url_for('auth.login') }}") Login
-              | {% endif %}
-              | #}
-              li
-                a(href="{{ url_for('home.index') }}") Главная
               li
                 a(href="{{ url_for('home.start') }}") Новая Игра
+              | {% if current_user.is_admin %}
               li
-                a(href="url_for('auth.register')") Register
+                a(href="{# { url_for('home.admin_dashboard') } #}") Dashboard
               li
-                a(href="url_for('auth.login')") Login
+                a(href="{# { url_for('admin.list_departments') } #}") Departments
+              li
+                 a(href="{# { url_for('admin.list_roles') } #}") Roles
+              li
+                a(href="{# { url_for('admin.list_employees') } #}") Employees
+              | {% endif %}
+              li
+                a(href="{{ url_for('auth.logout') }}") Выход
+              li
+                a <i class="fa fa-user"></i> {{ current_user.username }}!
+              | {% else %}
+              li
+                a(href="{{ url_for('auth.register') }}") Регистрация
+              li
+                a(href="{{ url_for('auth.login') }}") Вход
+              | {% endif %}
 
     .wrapper
       block body

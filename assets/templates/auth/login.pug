@@ -1,0 +1,14 @@
+extends ../_base.pug
+
+block body
+  | {% import "bootstrap/utils.html" as utils %}
+  | {% import "bootstrap/wtf.html" as wtf %}
+  .content-section
+    br
+    | {{ utils.flashed_messages() }}
+    br
+    .center
+      h1 Войдите в свою учетную запись
+      br
+      | {{ wtf.quick_form(form) }}
+
